@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  hydra:
+    build: .
+    container_name: hydra-music-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+    ports:
+      - "${DASHBOARD_PORT:-3000}:3000"
+    networks:
+      - hydra-network
+
+  # Optional Lavalink node (uncomment if you wish to use Lavalink backend)
+  # lavalink:
+  #   image: ghcr.io/lavalink-devs/lavalink:4
+  #   container_name: hydra-lavalink
+  #   restart: unless-stopped
+  #   environment:
+  #     - _JAVA_OPTIONS=-Xmx1G
+  #   ports:
+  #     - "2333:2333"
+  #   volumes:
+  #     - ./lavalink/application.yml:/opt/Lavalink/application.yml
+  #   networks:
+  #     - hydra-network
+
+networks:
+  hydra-network:
+    driver: bridge

@@ -1,0 +1,27 @@
+{
+  "name": "hydra-music",
+  "version": "1.0.0",
+  "description": "HYDRA - High Fidelity Discord Music Bot with Rich Audio Controls and Web Dashboard",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "deploy": "node scripts/deploy-commands.js",
+    "test": "node --test tests/queue.test.js tests/formatters.test.js tests/permissions.test.js tests/database.test.js tests/commands.test.js tests/lavalink.test.js"
+  },
+  "dependencies": {
+    "@discordjs/voice": "^0.19.2",
+    "@distube/ytdl-core": "^4.16.12",
+    "cookie-parser": "^1.4.7",
+    "discord.js": "^14.27.0",
+    "dotenv": "^18.0.8",
+    "express": "^5.3.0",
+    "express-session": "^1.19.0",
+    "ffmpeg-static": "^5.3.0",
+    "lavalink-client": "^2.11.0",
+    "libsodium-wrappers": "^0.8.4",
+    "opusscript": "^0.0.8",
+    "play-dl": "^1.9.7",
+    "soundcloud-downloader": "^1.0.0",
+    "sqlite3": "^6.0.1"
+  }
+}
